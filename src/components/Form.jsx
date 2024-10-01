@@ -63,12 +63,7 @@ const practicalExp = [
   },
 ];
 
-export function Form({
-  setShowPart,
-  setGeneralText,
-  setEduText,
-  setPracticalText,
-}) {
+export function Form({ setShowPart }) {
   let [sectionIndex, setSectionIndex] = useState(1);
   return (
     <>
@@ -80,15 +75,11 @@ export function Form({
         <button onClick={() => setSectionIndex(3)}>Practical Experience</button>
       </div>
       {sectionIndex === 1 ? (
-        <Section fieldsInfos={generalInfos} setText={setGeneralText} />
+        <Section fieldsInfos={generalInfos} />
       ) : sectionIndex === 2 ? (
-        <Section fieldsInfos={educationalExp} setText={setEduText} />
+        <Section fieldsInfos={educationalExp} />
       ) : (
-        <Section
-          fieldsInfos={practicalExp}
-          setShowPart={setShowPart}
-          setText={setPracticalText}
-        />
+        <Section fieldsInfos={practicalExp} setShowPart={setShowPart} />
       )}
     </>
   );

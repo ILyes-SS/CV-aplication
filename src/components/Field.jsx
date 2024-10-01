@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Field({ type, label, setText }) {
+export function Field({ type, label }) {
   const [text, setText] = useState("");
 
   function inputChangeHandler(e) {
