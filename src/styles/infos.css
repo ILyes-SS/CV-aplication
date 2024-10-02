@@ -1,0 +1,12 @@
+.infos {
+  border: 1px white dashed;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  align-items: center;
+}
+.infos ul {
+  line-height: 32px;
+  font-size: large;
+}

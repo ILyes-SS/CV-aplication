@@ -1,19 +1,20 @@
 import { useState } from "react";
 
-export function Field({ type, label }) {
-  const [text, setText] = useState("");
-
-  function inputChangeHandler(e) {
-    setText(e.target.value);
-  }
+export function Field({
+  type,
+  label,
+  sectionLabel,
+  handelInputChange,
+  formData,
+}) {
   return (
     <div className="field">
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={sectionLabel + "." + label}>{label}</label>
       <input
         type={type}
-        id={label}
-        value={text}
-        onChange={inputChangeHandler}
+        id={sectionLabel + "." + label}
+        value={formData[sectionLabel][label]}
+        onChange={(e) => handelInputChange(e)}
       />
     </div>
   );
